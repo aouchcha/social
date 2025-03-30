@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS likes_post (
+	like_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	post_id INTEGER NOT NULL,
+	user_id INTEGER NOT NULL,
+	is_like INTEGER CHECK (is_like IN (1)),
+	FOREIGN KEY (post_id) REFERENCES posts (post_id) ON DELETE CASCADE,
+	FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE CASCADE
+);

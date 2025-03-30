@@ -1,0 +1,82 @@
+
+.post_card {
+    width: 500px;
+    height: auto;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.post_card .author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.post_card .author img {
+    max-width: 50px;
+    width: 100%;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.post_card .author .author_info .author_name {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.post_card .author .author_info .author_name a {
+    color: #2D3B57;
+}
+
+.post_card .author .author_info .post_info {
+    font-size: 11px;
+    font-weight: 700;
+    color: #939599;
+}
+
+.post_card .author .author_info .type {
+    text-transform: capitalize;
+}
+
+.post {}
+
+.post .post_content {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: #1E211F;
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.reactions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.reactions button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 5px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.reactions i {
+    font-size: 19px;
+    color: #2D3B57;
+    margin-right: 2px;
+}

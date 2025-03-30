@@ -1,0 +1,1 @@
+DROP VIEW IF EXISTS all_posts_with_details;
