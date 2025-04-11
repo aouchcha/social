@@ -4,6 +4,9 @@ import { useState } from "react"
 export function CreateGroupComp() {
     const [name, setname] = useState("")
     const [desc, setdesc] = useState("")
+    const [UserId, setUserId] = useState(localStorage.getItem("user"))
+
+    
 
     const handleChange = (event, helper) => {
         if (helper == "name") {
@@ -20,7 +23,7 @@ export function CreateGroupComp() {
             <h3>Group Description</h3>
             <input type="text" placeholder="Enter group description" onChange={(e) =>handleChange(e,"desc")} value={desc}></input>
             <br></br>
-            <button onClick={ async () => await CreateGroup({"user_id":4,"name":name, "description":desc})} style={{width : "fit-content"}}>Submit</button>
+            <button onClick={ async () => await CreateGroup({"user_id":parseInt(UserId),"name":name, "description":desc})} style={{width : "fit-content"}}>Submit</button>
         </div>
     )
 }

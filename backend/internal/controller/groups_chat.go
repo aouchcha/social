@@ -54,13 +54,13 @@ func (h *Handler) ChatHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	fmt.Println("GROUPID", group_id)
+	fmt.Println("USERID", user_id)
 	status, err := h.service.GroupChat.CheckData(group_id, user_id)
 	if err != nil {
 		fmt.Println("Ana Hna", err)
 		h.errorHandler(w, r, status, err.Error())
 		return
 	}
-	// Corrected version
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		fmt.Println("WebSocket Err", err)
@@ -70,10 +70,8 @@ func (h *Handler) ChatHandler(w http.ResponseWriter, r *http.Request) {
 
 	mu.Lock()
 	if cl, ok := clients[user_id]; ok {
-		// User ID exists, append to existing slice
 		clients[user_id] = append(cl, conn)
 	} else {
-		// User ID doesn't exist, create new slice
 		clients[user_id] = []*websocket.Conn{conn}
 	}
 	mu.Unlock()

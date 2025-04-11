@@ -16,7 +16,7 @@ export function GroupsPage() {
                 
                 // Need to await the json() call
                 const data = await res.json();
-                // console.log(data);
+                console.log(data);
                 
                 setgroups(data.Groups);
             } catch (error) {

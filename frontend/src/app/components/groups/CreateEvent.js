@@ -8,6 +8,8 @@ export function CreateEventComp() {
     const [Desc, setDesc] = useState("")
     const [Date, setDate] = useState("")
     const [Time, setTime] = useState("")
+    const [UserId, setUserId] = useState(localStorage.getItem("user"))
+    
 
     const group_id = parseInt(localStorage.getItem("currentGroupId"))
 
@@ -42,7 +44,7 @@ export function CreateEventComp() {
                 <button 
                 onClick={() => CreateEvent({
                     //this will be removed because the use id with be taking from context
-                    "user_id" : 1,
+                    "user_id" : parseInt(UserId),
                     "group_id" : group_id,
                     "title" : Title,
                     "description" : Desc,

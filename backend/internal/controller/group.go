@@ -39,6 +39,7 @@ func (h *Handler) CreateGroupe(w http.ResponseWriter, r *http.Request) {
 		h.errorHandler(w, r, http.StatusBadRequest, err.Error())
 		return
 	}
+	fmt.Println(input)
 	defer r.Body.Close()
 	GroupeID, status, err := h.service.Group.CreateGroupe(input)
 	if err != nil {
